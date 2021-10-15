@@ -105,22 +105,22 @@ if (empty($_SESSION['username']) ) {
 
             <!-- Heading -->
             <div class="sidebar-heading">
-            <div class="text-center"> Others</div>
+            <div class="text-center"> Transaction</div>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item mt-2 mb-2">
-                <a class="nav-link collapsed" href="#" >
+                <a class="nav-link collapsed" href="transaksi/transaksi.php" >
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Pinjaman</span>
                 </a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item mt-2 mb-2">
-                <a class="nav-link collapsed" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link collapsed" href="transaksi/pengembalian.php">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pengembalian</span></a>
             </li>
 
             <!-- Divider -->
