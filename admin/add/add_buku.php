@@ -117,34 +117,34 @@ if (isset($_POST['submit'])) {
 
 
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+             <!-- Divider -->
+             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading  mt-2 mb-2">
-                <div class="text-center">Others</div>
+            <div class="text-center"> Transaction</div>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item mt-2 mb-2">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="../transaksi/transaksi.php" >
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Pinjaman</span>
                 </a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item mt-2 mb-2">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="../transaksi/pengembalian.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Pengembalian</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            
-        </ul>
+
+            </ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
