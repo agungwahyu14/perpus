@@ -11,8 +11,8 @@ require '../../functions.php';
 $pinjam = date("d-m-Y");
 $kembali = date("d-m-Y", time() + 60 * 60 * 24 * 5);
 
-$buku = query("SELECT * FROM tb_buku ORDER by id_buku DESC");
-$siswa = query("SELECT * FROM tb_siswa ORDER by id_siswa DESC");
+$buku = query("SELECT * FROM buku ORDER by id DESC");
+$siswa = query("SELECT * FROM siswa ORDER by id DESC");
 
 if (isset($_POST['simpan'])) {
   $tgl_pinjam    = isset($_POST['pinjam']) ? $_POST['pinjam'] : "";

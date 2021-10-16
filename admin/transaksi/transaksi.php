@@ -235,7 +235,8 @@ if (isset($_POST["cari"])) {
               <div class="card">
                   <div class="card-header bg-primary text-white"></div>
               <div class="card-body">
-              
+              <a href="tambah.php" class="btn btn-success mb-3" style="margin-top: 8px;"><i class="bi bi-plus-square"></i> Tambah Pinjaman</a>
+              <br>
              
               <!-- NAVIGASI PAGINATION -->
               <!-- <?php if ($halamanAktif > 1) : ?>
