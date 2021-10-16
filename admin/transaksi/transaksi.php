@@ -236,7 +236,7 @@ if (isset($_POST["cari"])) {
                   <div class="card-header bg-primary text-white"></div>
               <div class="card-body">
               
-              <br>
+             
               <!-- NAVIGASI PAGINATION -->
               <!-- <?php if ($halamanAktif > 1) : ?>
                 <a href="?halaman=<?= $halamanAktif - 1; ?>"> &laquo;</a>

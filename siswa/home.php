@@ -74,7 +74,7 @@ $siswa = query("SELECT * FROM siswa");
                 <div class="block">
                   <div class="divider mb-3"></div>
                   <span class="text-uppercase text-md letter-spacing text-white ">WELCOME BACK!</span><br><br>
-                  <h1 class="mb-3 mt-3 ">Hello<i class="fas fa-user me-2"></i><?php echo $_SESSION['nama'] ?></h1>
+                  <h1 class="mb-3 mt-3 ">Hello</h1>
                   <h4 class="text-uppercase letter-spacing text-white ">Selamat datang ke website kami</h4><br>
                   <h4 class="text-white ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores esse,similique cupiditate, provident soluta voluptas.  recusandae dolore quasi impedit facere,  facilis!</h4>
                   <div class="btn-container">
