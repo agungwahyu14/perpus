@@ -80,22 +80,22 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-            <div class="text-center"> Others</div>
+            <div class="text-center"> Transaction</div>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item mt-2 mb-2">
-                <a class="nav-link collapsed" href="#" >
+                <a class="nav-link collapsed" href="transaksi/transaksi.php" >
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Pinjaman</span>
                 </a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item mt-2 mb-2">
-                <a class="nav-link collapsed" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link collapsed" href="transaksi/pengembalian.php">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pengembalian</span></a>
             </li>
 
             <!-- Divider -->
@@ -185,21 +185,7 @@
 </div>
 </div>
 
-<div class="col-lg-6 mb-4">
 
-<!-- Data Petugas -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
-    </div>
-    <div class="card-body">
-        <div class="text-center">
-            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="asset/img/siswa.jpg" alt="...">
-        </div>
-        <a href="tables/table_transaksi.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Detail</a>
-    </div>
-</div>
-</div>
 
 <div class="col-lg-6 mb-4">
 

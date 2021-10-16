@@ -91,28 +91,33 @@ if(isset($_POST["cari"]) ){
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+         <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading  mt-2 mb-2">
-            <div class="text-center"> Others</div>
-            </div>
+<!-- Heading -->
+<div class="sidebar-heading  mt-2 mb-2">
+<div class="text-center"> Transaction</div>
+</div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item mt-2 mb-2">
-                <a class="nav-link collapsed" href="#" >
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-            </li>
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item mt-2 mb-2">
+    <a class="nav-link collapsed" href="../transaksi/transaksi.php" >
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Pinjaman</span>
+    </a>
+</li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item mt-2 mb-2">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-        </ul>
+<!-- Nav Item - Tables -->
+<li class="nav-item mt-2 mb-2">
+    <a class="nav-link" href="../transaksi/pengembalian.php">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Pengembalian</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider d-none d-md-block">
+
+
+</ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

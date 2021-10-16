@@ -23,7 +23,7 @@ if (isset($_POST['simpan'])) {
   $id_buku    = $pecah_buku[0];
   $judul      = $pecah_buku[1];
 
-  $dapat_siswa  = isset($_POST['nama']) ? $_POST['nama'] : "";
+  $dapat_siswa  = isset($_POST['siswa']) ? $_POST['siswa'] : "";
   $pecah_siswa  = explode(".", $dapat_siswa);
   $id_siswa     = $pecah_siswa[0];
   $siswa      = $pecah_siswa[1];
@@ -33,7 +33,7 @@ if (isset($_POST['simpan'])) {
   foreach ($query as $hasil) {
     $sisa = $hasil['jumlah_buku'];
 
-    //cek data yang duplikate
+    //cek apakah ada data yang sama
     $cek = $conn->query("SELECT * FROM tb_transaksi WHERE username=$id_siswa AND id_buku=$id_buku");
 
 
@@ -45,9 +45,9 @@ if (isset($_POST['simpan'])) {
       </script>";
     } elseif ($sisa != 0) {
       $qt = $conn->query("INSERT INTO tb_transaksi VALUES (null, '$id_buku', '$judul', '$id_siswa', '$siswa', '$tgl_pinjam', '$tgl_kembali', 'Pinjam', null)") or die("Gagal Masuk");
+      $qb  = $conn->query("UPDATE tb_buku SET jumlah_buku = (jumlah_buku-1) WHERE id_buku = $id_buku ");
 
-      $qu  = $conn->query("UPDATE tb_buku SET jumlah_buku = (jumlah_buku-1) WHERE id_buku = $id_buku ");
-      if ($qt && $qu) {
+      if ($qt && $qb) {
         echo "
         <script>
           alert('TRANSAKSI BERHASIL');
@@ -76,7 +76,7 @@ if (isset($_POST['simpan'])) {
 <html>
 
 <head>
-  <title>Tambah Data Pinjaman</title>
+  <title>Tambah Data Pinjaman Buku</title>
   <link rel="icon" href="../../icon/logo.png">
 
   <!-- Bootstrap CSS -->
@@ -89,17 +89,16 @@ if (isset($_POST['simpan'])) {
 
 <body>
   <!-- top navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000080;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="../home.php">R.Perpustakaan (PETUGAS)</a>
+      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="../home.php">R.Perpustakaan (ADMIN)</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="topNavBar">
-
         <ul class="navbar-nav ms-auto align-items-center">
           <h6 class="text-white mt-2"><?php echo date('d-M-Y'); ?></h6>
           <li class="nav-item dropdown">
@@ -118,7 +117,7 @@ if (isset($_POST['simpan'])) {
   <!-- top navigation bar -->
 
   <!-- offcanvas -->
-  <div class="offcanvas offcanvas-start sidebar-nav" tabindex="-1" id="sidebar" style="background-color: #000080;">
+  <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
     <div class="offcanvas-body p-0">
       <nav class="navbar-dark">
         <ul class="navbar-nav">
@@ -138,6 +137,12 @@ if (isset($_POST['simpan'])) {
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">ADD DATA <i class="bi bi-person-plus-fill"></i></div>
           </li>
           <li>
+            <a href="../add/add_petugas.php" class="nav-link px-3">
+              <span class="me-2"><i class="bi bi-person-lines-fill"></i></span>
+              <span>Petugas</span>
+            </a>
+          </li>
+          <li>
             <a href="../add/add_siswa.php" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-person-fill"></i></span>
               <span>Siswa</span>
@@ -154,7 +159,7 @@ if (isset($_POST['simpan'])) {
             <hr class="dropdown-divider bg-light" />
           </li>
           <li>
-            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">TRANSAKSI</div>
+            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">Transaksi</div>
           </li>
           <li>
             <a href="transaksi.php" class="nav-link px-3">
@@ -185,22 +190,23 @@ if (isset($_POST['simpan'])) {
               Form Input Data Pinjam Buku
             </div>
             <div class="card-body">
-              <form action="" method="POST">
+              <form action="" method="POST" aria-required="true">
                 <div class="form-group mb-3">
                   <label class="mb-2"> Judul Buku</label>
-                  <select class="form-control" name="judul">
-                    <option>== Pilih Buku==</option>
+                  <select class="form-control" name="judul" required>
+                    <option required>== Pilih Buku==</option>
                     <?php
                     foreach ($buku as $bku) {
                       echo "<option value='$bku[id_buku].$bku[judul]'>$bku[judul]</option>";
                     }
                     ?>
                   </select>
+
                 </div>
 
                 <div class="form-group mb-3">
                   <label class="mb-2">Nama Siswa</label>
-                  <select class="form-control" name="nama">
+                  <select class="form-control" name="siswa" required>
                     <option>== Pilih Siswa==</option>
                     <?php
                     foreach ($siswa as $swa) {
@@ -215,6 +221,7 @@ if (isset($_POST['simpan'])) {
                   <input class="form-control" type="text" name="pinjam" value="<?php echo $pinjam; ?>" readonly />
                 </div>
 
+
                 <div class="form-group mb-3">
                   <label class="mb-2">Tanggal Kembali</label>
                   <input class="form-control" type="text" name="kembali" value="<?php echo $kembali; ?>" readonly />
@@ -224,14 +231,11 @@ if (isset($_POST['simpan'])) {
                   <input type="submit" name="simpan" value="simpan" class="btn btn-primary">
                   <input type="reset" name="simpan" value="reset" class="btn btn-warning">
                 </div>
-
+              </form>
             </div>
-
-            </form>
           </div>
         </div>
       </div>
-    </div>
   </main>
   <script src="../../bs5/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
