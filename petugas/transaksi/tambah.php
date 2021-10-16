@@ -20,7 +20,7 @@ if (isset($_POST['simpan'])) {
 
   $dapat_buku    = isset($_POST['judul']) ? $_POST['judul'] : "";
   $pecah_buku    = explode(".", $dapat_buku);
-  $id    = $pecah_buku[0];
+  $id_buku    = $pecah_buku[0];
   $judul      = $pecah_buku[1];
 
   $dapat_siswa  = isset($_POST['siswa']) ? $_POST['siswa'] : "";
