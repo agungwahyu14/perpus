@@ -205,20 +205,26 @@ if (isset($_POST['submit'])) {
                         <div class="col-lg-6 mb-4">
                         <form class="user" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="">Judul</label>
+                            <label for="">Judul :</label>
                             <input name="judul" type="text" class="form-control form-control-user"placeholder="Enter Name" autofocus autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                            <label for="">Pengarang</label>
+                            <label for="">Pengarang :</label>
                             <input name="pengarang" type="text" class="form-control form-control-user"placeholder="Enter Author" autofocus autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                            <label for="">Penerbit</label>
+                            <label for="">Penerbit :</label>
                             <input name="penerbit" type="text" class="form-control form-control-user"placeholder="Enter Publisher " autofocus autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                            <label for="">Kode Buku</label>
+                            <label for="">Kode Buku :</label>
                             <input name ="kode_buku" type="text" class="form-control form-control-user" placeholder="Enter Book Code" autofocus autocomplete="off" required>
+                            <div>
+                            <div class="form-group">
+                            <label for="">Jumlah Buku :</label>
+                            <input name ="jumlah_buku" type="text" class="form-control form-control-user" placeholder="Enter Book Code" autofocus autocomplete="off" required>
+                            <div>
+
                             <div class="form-group mt-3">
                             <label for="cover"> Pilih Gambar </label><br>
                             <input type="file" name="cover" id="cover">

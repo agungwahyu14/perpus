@@ -214,20 +214,25 @@ $buku = query("SELECT * FROM buku WHERE id = $id")[0];
                         <input type="hidden" name="id" value="<?php echo $buku["id"]; ?>">
                         <input type="hidden" name="coverLama" value="<?php echo $buku["cover"]; ?>">
                             <label for="">Judul</label>
-                            <input name="judul" type="text" value="<?=$buku["judul"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            <input name="judul" type="text" required value="<?=$buku["judul"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
                             </div>
                             <div class="form-group">
                             <label for="">Pengarang</label>
-                            <input name="pengarang" type="text" value="<?=$buku["pengarang"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            <input name="pengarang" type="text" required value="<?=$buku["pengarang"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
                             </div>
                             <div class="form-group">
                             <label for="">Penerbit</label>
-                            <input name="penerbit" type="text" value="<?=$buku["penerbit"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            <input name="penerbit" type="text" required value="<?=$buku["penerbit"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
                             </div>
 
                             <div class="form-group">
                             <label for="">Kode Buku</label>
-                            <input name="kode_buku" type="text" value="<?=$buku["kode_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            <input name="kode_buku" type="text" required value="<?=$buku["kode_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                            <label for="">Jumlah Buku</label>
+                            <input name="jumlah_buku" type="text" required value="<?=$buku["jumlah_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
                             </div>
 
                             <div class="form-group mt-3">
