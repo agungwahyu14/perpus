@@ -4,17 +4,6 @@ require '../../functions.php';
 
 $siswa = query("SELECT * FROM siswa");
 
-// Pagination
-// konfigurasi
-$jumlahDataPerHalaman = 5;
-$jumlahData = count(query("SELECT * FROM siswa"));
-$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
-$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-
-
-$siswa = query("SELECT * FROM tb_siswa ORDER BY id_siswa DESC LIMIT $awalData, $jumlahDataPerHalaman");
-
 // TOmbol cari di click
 if(isset($_POST["cari"]) ){
     $siswa = carisiswa($_POST["keyword"]);

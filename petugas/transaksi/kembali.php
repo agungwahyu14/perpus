@@ -2,7 +2,7 @@
 require '../../functions.php';
 
 $id = $_GET['id'];
-$id_buku = $_GET['buku'];
+$id= $_GET['buku'];
 
 // $sql = $conn->query("update tb_transaksi set status='kembali' where id = '$id'");
 $sql = $conn->query("DELETE FROM transaksi WHERE id_transaksi = '$id'");
