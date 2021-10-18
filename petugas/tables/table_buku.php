@@ -4,6 +4,14 @@ require '../../functions.php';
 
 $buku = query("SELECT * FROM buku");
 
+// Pagination
+// konfigurasi
+$jumlahDataPerHalaman = 7;
+$jumlahData = count(query("SELECT * FROM buku"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
 // Tombol cari di click
 if(isset($_POST["cari"]) ){
     $buku = caribuku($_POST["keyword"]);

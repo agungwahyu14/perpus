@@ -3,7 +3,7 @@
 if (isset($_POST['search'])) {
     include "../../../functions.php";
     $search = $_POST['search'];
-    $transaksi = mysqli_query($conn, "SELECT * FROM tb_transaksi WHERE 
+    $transaksi = mysqli_query($conn, "SELECT * FROM transaksi WHERE 
                                     judul LIKE '%" . $search . "%' OR 
                                     username LIKE '%" . $search . "%' OR 
                                     nama LIKE '%" . $search . "%' OR 
