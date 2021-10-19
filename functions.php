@@ -243,6 +243,7 @@ function tambahbuku($data)
   $judul = stripslashes($data["judul"]);
   $pengarang =stripslashes($data["pengarang"]);
   $penerbit = stripslashes($data["penerbit"]);
+  $jumlah_buku = stripslashes($data["jumlah_buku"]);
   $kode_buku = stripslashes($data["kode_buku"]);
 
   // Cek judul sudah ada atau belum
@@ -264,7 +265,7 @@ function tambahbuku($data)
   }
 
   // Tambah buku baru ke database
-  mysqli_query($conn, "INSERT INTO buku VALUES('', '$judul',  '$pengarang', '$penerbit', '$kode_buku', '$cover')");
+  mysqli_query($conn, "INSERT INTO buku VALUES('', '$judul',  '$pengarang', '$penerbit', '$jumlah_buku', '$kode_buku', '$cover')");
 
   return mysqli_affected_rows($conn);;
 }
@@ -329,6 +330,7 @@ function ubahBuku($data)
   $judul = htmlspecialchars($data["judul"]);
   $pengarang = htmlspecialchars($data["pengarang"]);
   $penerbit = htmlspecialchars($data["penerbit"]);
+  $jumlah_buku = stripslashes($data["jumlah_buku"]);
   $kode_buku =  htmlspecialchars($data["kode_buku"]);
   $coverLama =  htmlspecialchars($data["coverLama"]);
 
@@ -346,6 +348,7 @@ function ubahBuku($data)
             pengarang = '$pengarang',
             penerbit = '$penerbit',
             kode_buku = '$kode_buku',
+            jumlah_buku = '$jumlah_buku',
             cover = '$cover'
 
            WHERE id = $id 

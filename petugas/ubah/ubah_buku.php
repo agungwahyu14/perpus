@@ -232,7 +232,7 @@ $buku = query("SELECT * FROM buku WHERE id = $id")[0];
 
                             <div class="form-group">
                             <label for="">Jumlah Buku</label>
-                            <input name="jumlah" type="text" required value="<?=$buku["jumlah_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            <input name="jumlah_buku" type="text" required value="<?=$buku["jumlah_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
                             </div>
 
                             <div class="form-group mt-3">
