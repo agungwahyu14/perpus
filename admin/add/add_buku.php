@@ -232,6 +232,11 @@ if (isset($_POST['submit'])) {
                             <div class="form-group">
                             <label for="">Kode Buku</label>
                             <input name ="kode_buku" type="text" class="form-control form-control-user" placeholder="Enter Book Code" autofocus autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                            <label for="">Jumlah Buku :</label>
+                            <input name ="jumlah_buku" type="text" class="form-control form-control-user" placeholder="Enter Book Code" autofocus autocomplete="off" required>
+                            <div>
                             <div class="form-group mt-3">
                             <label for="cover"> Pilih Gambar </label><br>
                             <input type="file" name="cover" id="cover">
@@ -242,7 +247,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     
                     </div>
-
+                    </div>
                     </div>
 
                 </div>

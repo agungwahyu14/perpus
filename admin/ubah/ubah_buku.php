@@ -242,6 +242,11 @@ $buku = query("SELECT * FROM buku WHERE id = $id")[0];
                             <input name="kode_buku" type="text" value="<?=$buku["kode_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
                             </div>
 
+                            <div class="form-group">
+                            <label for="">Jumlah Buku</label>
+                            <input name="jumlah_buku" type="text" required value="<?=$buku["jumlah_buku"]; ?>" class="form-control form-control-user" required autofocus autocomplete="off">
+                            </div>
+
                             <div class="form-group mt-3">
                             <label for="cover"> Pilih Gambar : </label><br>
                             <img src="../../admin/add/buku/<?= $buku['cover']; ?>" width="150"> <br><br>

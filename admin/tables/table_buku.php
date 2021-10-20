@@ -224,6 +224,7 @@ if(isset($_POST["cari"]) ){
                                     <th>Judul</th>
                                     <th>Pengarang</th>
                                     <th>Penerbit</th>
+                                    <th>Jumlah</th>
                                     <th>Kode Buku</th>
 
                                 </tr>
@@ -245,6 +246,7 @@ if(isset($_POST["cari"]) ){
                                     <td><?= $row["judul"];?></td>
                                     <td><?= $row["pengarang"];?></td>
                                     <td><?= $row["penerbit"];?></td>
+                                    <td><?= $row["jumlah_buku"]; ?></td>
                                     <td><?= $row["kode_buku"];?></td>
                         
                                 </tr>

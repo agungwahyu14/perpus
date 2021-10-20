@@ -20,7 +20,7 @@ if ($lambat > 2) {
 	$next_2_hari	= mktime(0, 0, 0, $pecah[1], $pecah[0] + 2, $pecah[2]);
 	$hari_next		= date("d-m-Y", $next_2_hari);
 
-	$update = $conn->query("UPDATE tb_transaksi SET tgl_kembali='$hari_next' where id_transaksi='$id'");
+	$update = $conn->query("UPDATE transaksi SET tgl_kembali='$hari_next' where id_transaksi='$id'");
 
 	if ($update) {
 	?>
