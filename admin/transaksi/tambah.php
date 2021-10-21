@@ -144,12 +144,25 @@ if (isset($_POST['simpan'])) {
             <span>Add Siswa</span>
         </a>
     </li>
-   
+   <!-- Nav Item - Pages Collapse Menu -->
+   <li class="nav-item mt-2 mb-2">
+        <a class="nav-link collapsed" href="../add/add_petugas.php" >
+            <i class="fas fa-fw fa-plus"></i>
+            <span>Add Petugas</span>
+        </a>
+    </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item mt-2 mb-2">
         <a class="nav-link collapsed" href="../add/add_buku.php" >
             <i class="fas fa-fw fa-plus"></i>
             <span>Add Buku</span>
+        </a>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item mt-2 mb-2">
+        <a class="nav-link collapsed" href="../add/add_admin.php" >
+            <i class="fas fa-fw fa-plus"></i>
+            <span>Add Admin</span>
         </a>
     </li>
    
